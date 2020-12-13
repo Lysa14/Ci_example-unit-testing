@@ -12,9 +12,6 @@ import { get_division } from './models/p1';
 import { get_date_start, get_date_start_end } from './models/p2';
 
 app
-.get('/hello', (req, res) => {
-    res.send("how's it going?");
-})
 // p1
 .get('/api/p1/:str/:nbr', (req, res) => {
     get_division(res, req.params.str, req.params.nbr);

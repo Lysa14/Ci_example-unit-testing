@@ -15,9 +15,6 @@ var app = express_1.default();
 var p1_1 = require("./models/p1");
 var p2_1 = require("./models/p2");
 app
-    .get('/hello', function (req, res) {
-    res.send("how's it going?");
-})
     // p1
     .get('/api/p1/:str/:nbr', function (req, res) {
     p1_1.get_division(res, req.params.str, req.params.nbr);
