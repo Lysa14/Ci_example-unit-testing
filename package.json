@@ -2,9 +2,9 @@
   "name": "nobo-test",
   "version": "1.0.0",
   "description": "Test technique",
-  "main": "server.ts",
+  "main": "src/server.js",
   "scripts": {
-    "start": "node src/server.ts",
+    "start": "node .",
     "dev": "nodemon src/server.ts",
     "build": "tsc --project ./",
     "test": "mocha --require ts-node/register tests/**/*.spec.ts --exit"
