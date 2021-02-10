@@ -2,6 +2,7 @@
 
 - node 14
 - Express
+- Typescript
 - mocha
 - chai
 
