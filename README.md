@@ -1,4 +1,4 @@
-# Test technique
+# Example unit testing
 
 - node 14
 - Express
@@ -12,3 +12,7 @@
 # Launch unit test
 
 `npm test`
+
+# Todo
+
+edit config to build program in build folder
