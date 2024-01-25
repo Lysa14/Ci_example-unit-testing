@@ -22,7 +22,7 @@ jobs:
         run: |
           yarn upgrade
           npm install -g yarn
-          yarn  install
+       
          
       - name: Build 
         run: |
