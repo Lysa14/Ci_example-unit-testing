@@ -26,9 +26,7 @@ jobs:
                      
          
       - name: Build 
-        run: |
-          npm start
-          npm dev
+        run: |v
           npm build
 
       - name: Test
