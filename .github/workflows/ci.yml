@@ -1,9 +1,9 @@
-name: Ci javascript 
+name: Ci javaScript 
 
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build:
