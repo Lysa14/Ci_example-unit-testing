@@ -21,16 +21,16 @@ jobs:
       - name: Install Dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install yarn
-          yarn upgrade
+          sudo apt-get install npm
+          npm upgrade
                      
          
       - name: Build 
         run: |
-          yarn start
-          yarn dev
-          yarn build
+          npm start
+          npm dev
+          npm build
 
       - name: Test
         run: | 
-          yarn test
+          npm test
