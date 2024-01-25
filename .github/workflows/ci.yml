@@ -20,9 +20,10 @@ jobs:
 
       - name: Install Dependencies
         run: |
+          sudo apt-get yarn 
           yarn upgrade
-          npm install -g yarn
-       
+          yarn install
+               
          
       - name: Build 
         run: |
