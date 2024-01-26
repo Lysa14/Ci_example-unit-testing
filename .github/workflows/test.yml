@@ -21,6 +21,7 @@ jobs:
     - name: Build
       run: |
         npm run build
+        npm run dev
 
     - name: Check for defined tests
       run: |
