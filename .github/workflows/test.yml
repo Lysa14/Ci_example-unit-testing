@@ -18,9 +18,6 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Run tests
-      run: npm test
-
     - name: Check for defined tests
       run: |
         test_files=$(find . -name '*spec.js')
@@ -28,4 +25,5 @@ jobs:
           echo "Error: No test files found."
           exit 1
         fi
-
+    - name: Run tests
+      run: npm test
