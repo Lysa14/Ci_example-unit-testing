@@ -20,8 +20,7 @@ jobs:
  
     - name: Build
       run: |
-        npm dev 
-        npm build
+        npm run build
 
     - name: Check for defined tests
       run: |
