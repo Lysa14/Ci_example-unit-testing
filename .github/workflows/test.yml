@@ -32,3 +32,24 @@ jobs:
         fi
     - name: Run tests
       run: npm test
+        
+        
+        
+  # Add the Cypress job for GUI tests
+  cypress:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '18'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run Cypress tests
+      run: npm run cypress:run
