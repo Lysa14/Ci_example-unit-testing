@@ -18,8 +18,8 @@ jobs:
     - name: Install dependencies
       run: npm install
  
-    - name: NPM start
-      run: npm start
+    - name: Build
+      run: npm build
 
     - name: Check for defined tests
       run: |
