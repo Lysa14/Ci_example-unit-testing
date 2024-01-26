@@ -19,7 +19,9 @@ jobs:
       run: npm install
  
     - name: Build
-      run: npm build
+      run: |
+        npm dev 
+        npm build
 
     - name: Check for defined tests
       run: |
