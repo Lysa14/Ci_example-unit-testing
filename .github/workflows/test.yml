@@ -21,11 +21,11 @@ jobs:
     - name: Build
       run: |
         npm run build
-        npm run dev
+      
 
     - name: Check for defined tests
       run: |
-        test_files=$(find . -name '*spec.js')
+        test_files=$(find . -name '*spec*.js')
         if [ -z "$test_files" ]; then
           echo "Error: No test files found."
           exit 1
