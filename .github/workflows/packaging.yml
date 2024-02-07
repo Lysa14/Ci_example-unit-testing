@@ -12,6 +12,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
           scope: '@lysa14'
       - run: |
+             npm cache clean --force
              npm install
              npm login --username ${{ secrets.NPM_USERNAME }} --password ${{ secrets.NPM_PASSWORD }} --email ${{ secrets.NPM_EMAIL }}
              npm publish
