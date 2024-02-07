@@ -10,7 +10,7 @@ jobs:
         with:
           node-version: '18'
           registry-url: 'https://registry.npmjs.org'
-          scope: '@Lysa14/nobo-test'
+          scope: '@lysa14'
       - run: |
              npm install
              npm publish
