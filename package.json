@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Test technique",
   "main": "src/server.js",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/@Lysa14"
+  },
   "scripts": {
     "start": "node .",
     "dev": "nodemon src/server.ts",
