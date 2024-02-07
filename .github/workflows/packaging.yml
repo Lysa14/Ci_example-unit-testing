@@ -9,7 +9,8 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '18'
-          registry-url: 'https://registry.npmjs.org/@lysa14/nobo-test'
+          registry-url: 'https://registry.npmjs.org'
+          #scope: '@lysa14'
          
       - run: |
              npm cache clean --force
