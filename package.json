@@ -4,7 +4,7 @@
   "description": "Test technique",
   "main": "src/server.js",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/@Lysa14"
+    "registry": "https://registry.npmjs.org/@Lysa14/nobo-test"
   },
   "scripts": {
     "start": "node .",
