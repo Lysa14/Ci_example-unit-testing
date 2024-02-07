@@ -9,12 +9,12 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '18'
-          registry-url: 'https://registry.npmjs.org'
-          scope: '@lysa14'
+          registry-url: 'https://registry.npmjs.org/@lysa14/nobo-test'
+         
       - run: |
              npm cache clean --force
              npm install
              npm login --username ${{ secrets.NPM_USERNAME }} --password ${{ secrets.NPM_PASSWORD }} --email ${{ secrets.NPM_EMAIL }}
              npm publish
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_TOKEN }}
