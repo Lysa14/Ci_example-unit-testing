@@ -1,11 +1,13 @@
 {
-  "name": "nobo-test",
+  "name": "@lysa14/Ci_example-unit-testing",
   "version": "1.0.0",
   "description": "Test technique",
   "main": "src/server.js",
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/@lysa14/nobo-test"
-  },
+  
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Lysa14/Ci_example-unit-testing.git"},
+
   "scripts": {
     "start": "node .",
     "dev": "nodemon src/server.ts",

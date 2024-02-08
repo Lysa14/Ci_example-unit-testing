@@ -15,7 +15,7 @@ jobs:
       - run: |
              npm cache clean --force
              npm install
-             npm ci — ignore-scripts
+             npm ci --ignore-scripts
              npm login --username ${{ secrets.NPM_USERNAME }} --password ${{ secrets.NPM_PASSWORD }} --email ${{ secrets.NPM_EMAIL }}
              npm publish
         env:
