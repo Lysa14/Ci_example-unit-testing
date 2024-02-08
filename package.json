@@ -8,7 +8,7 @@
     "url": "https://github.com/Lysa14/Ci_example-unit-testing.git"
   },
   "publishConfig": {
-    "@lysa14:ci-example": "https://npm.pkg.github.com"
+    "registry": "https://npm.pkg.github.com"
   },
   "scripts": {
     "start": "node .",
