@@ -18,10 +18,10 @@ jobs:
              npm cache clean --force
              npm install
 
-#      - name: Publish to npm
-#        run: |     
-#         npm publish --access private
-#        working-directory: .
-#        env:
-#          NODE_AUTH_TOKEN: ${{ secrets.NODE_TOKEN }}
+      - name: Publish to npm
+        run: |     
+         npm publish --access private
+        working-directory: .
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_TOKEN }}
 # npm ci --ignore-scripts
