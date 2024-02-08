@@ -17,6 +17,8 @@ jobs:
         run: |
              npm cache clean --force
              npm install
+     
+      - run: npm ci
 
       - name: Publish to npm
         run: |     
