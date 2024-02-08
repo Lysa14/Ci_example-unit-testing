@@ -21,7 +21,7 @@ jobs:
       - name: Publish to npm
         run: |     
             npm login --username ${{ secrets.NPM_USERNAME }} --password ${{ secrets.NPM_PASSWORD }} --email ${{ secrets.NPM_EMAIL }}
-            npm publish
+            npm publish --access public
         working-directory: .
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NODE_TOKEN }}
