@@ -55,4 +55,7 @@ jobs:
       run: npx cypress install
 
     - name: Run Cypress tests
-      run: npm run cypress:run
+      run: |
+        npx cypress open --config baseUrl=http://localhost:3000
+   #     npm run cypress:run
+
