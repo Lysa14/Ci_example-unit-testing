@@ -20,7 +20,7 @@
   "author": "sbelondr",
   "license": "MIT",
   "dependencies": {
-    "@lysa14/ci-example": "^1.0.1",
+    "@lysa14/ci-example": "^1.0.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1"
   },
