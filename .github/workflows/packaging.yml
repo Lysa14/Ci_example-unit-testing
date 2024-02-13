@@ -23,5 +23,6 @@ jobs:
          npm publish --access private
         working-directory: .
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NODE_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+    #      NODE_AUTH_TOKEN: ${{ secrets.NODE_TOKEN }}
 # npm ci --ignore-scripts

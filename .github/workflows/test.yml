@@ -56,6 +56,6 @@ jobs:
 
     - name: Run Cypress tests
       run: |
-        npx cypress open --config baseUrl=http://localhost:3000
+         npx cypress open --config baseUrl=http://localhost:3000
    #     npm run cypress:run
 

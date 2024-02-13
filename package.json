@@ -1,5 +1,5 @@
 {
-  "name": "@lysa14/ci-example",
+  "name": "@lysa14/TEST-package",
   "version": "1.0.1",
   "description": "Test technique",
   "main": "src/server.js",
