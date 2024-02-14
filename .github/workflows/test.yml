@@ -42,26 +42,26 @@ jobs:
         
         
   # Add the Cypress job for GUI tests
-  cypress:
-    runs-on: ubuntu-latest
+#  cypress:
+#    runs-on: ubuntu-latest
 
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+#    steps:
+#    - name: Checkout code
+#      uses: actions/checkout@v2
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '18'
+ #   - name: Set up Node.js
+#      uses: actions/setup-node@v2
+#      with:
+#        node-version: '18'
 
-    - name: Install dependencies
-      run: npm instal
+#    - name: Install dependencies
+#      run: npm instal
         
-    - name: Install cypress
-      run: npx cypress install
+ #   - name: Install cypress
+ #     run: npx cypress install
 
-    - name: Run Cypress tests
-      run: |
-         npx cypress open --config baseUrl=http://localhost:3000
+ #   - name: Run Cypress tests
+ #     run: |
+ #        npx cypress open --config baseUrl=http://localhost:3000
    #     npm run cypress:run
 

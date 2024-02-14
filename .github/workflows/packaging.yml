@@ -12,12 +12,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       # Setup .npmrc file to publish to npm
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v3
         with:
           node-version: '18'
           registry-url: 'https://registry.npmjs.org'
-          scope: '@lysa14'
-         
+          scope: '@Lysa14' # @ github.username
+        
       - name: Install Dependencies
         run: |
              npm cache clean --force
@@ -28,7 +28,7 @@ jobs:
          npm publish --access public
         working-directory: .
         env:
-        #   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-       #    NODE_AUTH_TOKEN: ${{ secrets.NODE_TOKEN }}
-            NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+           NODE_AUTH_TOKEN: ${{ secrets.NODE_TOKEN }}
+          
+           
 # npm ci --ignore-scripts
