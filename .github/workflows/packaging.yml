@@ -16,7 +16,6 @@ jobs:
         with:
           node-version: '18'
           registry-url: 'https://registry.npmjs.org'
-          scope: '@Lysa14' # @ github.username
         
       - name: Install Dependencies
         run: |
@@ -29,6 +28,5 @@ jobs:
         working-directory: .
         env:
            NODE_AUTH_TOKEN: ${{ secrets.NODE_TOKEN }}
-          
-           
-# npm ci --ignore-scripts
+
+
