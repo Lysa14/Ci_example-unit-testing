@@ -1,5 +1,11 @@
 name: Publish Package to npmjs registry
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - test
+  pull_request:
+    branches:
+      - test
 jobs:
   build:
     runs-on: ubuntu-latest
