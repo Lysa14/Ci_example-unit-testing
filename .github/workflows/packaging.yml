@@ -16,7 +16,7 @@ jobs:
         with:
           node-version: '18'
           registry-url: 'https://registry.npmjs.org'
-          scope: '@Lysa14'
+          scope: '@lysa14'
          
       - name: Install Dependencies
         run: |
