@@ -1,40 +1,46 @@
 name: Release
 
-# Run on every commit tag which begins with "v" (e.g., "v0.1.4")
 on:
   push:
     tags:
-      - "v*"
+      - "*"   # Run on every commit tag which begins with "v" (e.g., "v0.1.4")
   release:
     types: [published]
 
 jobs:
   release:
     name: "Release"
-    runs-on: "ubuntu-latest"
+    runs-on: ubuntu-latest
          
     strategy:
-     matrix:
-       architecture: [aarch64] # , x86_64
-       ostype: [linux-gnu] # ,linux-musl
+      matrix:
+        architecture: [aarch64] # , x86_64
+        ostype: [linux-gnu] # ,linux-musl
     steps:
-      - name : Release  
-        uses: "marvinpinto/action-automatic-releases@latest"
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Release  
+        id: release
+        uses: marvinpinto/action-automatic-releases@latest
         with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
           prerelease: false
 
       - name: Installer les dépendances
-        run: sudo apt update && sudo apt install -y tar
+        run: |
+          sudo apt update
+          sudo apt install -y tar
 
       - name: Archive the package
-        if: ${{ needs.release.outputs.published == 'true' }}
+        if: steps.release.outputs.published == 'true'
         run: |
-          tar -C package -czvf ${{ matrix.architecture }}-${{ matrix.ostype }}.tar.gz .
+          tar -czvf ${{ matrix.architecture }}-${{ matrix.ostype }}.tar.gz .
 
       - name: Add Release Artifact to the GitHub Release
-        if: ${{ needs.release.outputs.published == 'true' }}
+        if: steps.release.outputs.published == 'true'
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: ${{ needs.release.outputs.release-git-tag }}
+          tag_name: ${{ steps.release.outputs.release-git-tag }}
           files: ${{ matrix.architecture }}-${{ matrix.ostype }}.tar.gz
+
