@@ -88,3 +88,16 @@ jobs:
  #        npx cypress open --config baseUrl=http://localhost:3000
    #     npm run cypress:run
 
+
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: snyk/actions/setup@master
+      - uses: actions/setup-go@v1
+        with:
+          go-version: '1.19'
+      - name: Snyk test
+        run: snyk test
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
