@@ -28,6 +28,6 @@ jobs:
          npm publish --access public
         working-directory: .
         env:
-           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+           NODE_AUTH_TOKEN: ${{ secrets.NODE_TOKEN }}
 
 
