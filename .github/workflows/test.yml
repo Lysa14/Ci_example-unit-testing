@@ -40,29 +40,29 @@ jobs:
       run: npm test
         
  
-  # send_email_notification:
-  #       runs-on: ubuntu-latest
-  #       needs: test
-  #       if: ${{ needs.test.result == 'success' }}
-  #       steps:
-  #         - name: Send Email
-  #           if: always()
-  #           uses: hilarion5/send-mail@v1
-  #           with:
-  #             smtp-server: ${{ secrets.SMTP_NAME }}
-  #             smtp-port: 2525
-  #             smtp-secure: false
-  #             from-email: ${{ secrets.FROM_EMAIL }}
-  #             to-email: ${{ secrets.SMTP_TO_EMAIL }}
-  #             username: ${{ secrets.SMTP_USERNAME }}
-  #             password: ${{ secrets.SMTP_PASSWORD }}
-  #             subject: Workflows Status Notifications
-  #             body: |
+  send_email_notification:
+        runs-on: ubuntu-latest
+        needs: test
+        if: ${{ needs.test.result == 'success' }}
+        steps:
+          - name: Send Email
+            if: always()
+            uses: hilarion5/send-mail@v1
+            with:
+              smtp-server: ${{ secrets.SMTP_NAME }}
+              smtp-port: 2525
+              smtp-secure: false
+              from-email: ${{ secrets.FROM_EMAIL }}
+              to-email: ${{ secrets.SMTP_TO_EMAIL }}
+              username: ${{ secrets.SMTP_USERNAME }}
+              password: ${{ secrets.SMTP_PASSWORD }}
+              subject: Workflows Status Notifications
+              body: |
                 
-  #               The build was ${{ needs.test_php.result }}.
-  #               ----------------------------------------------
-  #               Une nouvelle version de notre projet est disponible. Vous pouvez consulter la source du projet ici : https://github.com/${{ github.repository }}
-  #               ---------------------------------------------      
+                The build was ${{ needs.test.result }}.
+                ----------------------------------------------
+                Une nouvelle version de notre projet est disponible. Vous pouvez consulter la source du projet ici : https://github.com/${{ github.repository }}
+                ---------------------------------------------      
         
   # Add the Cypress job for GUI tests
 #  cypress:

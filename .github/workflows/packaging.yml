@@ -16,7 +16,7 @@ jobs:
         with:
           node-version: '18'
           registry-url: 'https://registry.npmjs.org'
-          scope: '@Lysa14'
+          scope: '@${{ secrets.username_registry}}'
         
       - name: Install Dependencies
         run: |
@@ -27,7 +27,7 @@ jobs:
         run: |     
          npm publish --access public
         working-directory: .
- #       env:
- #          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        env:
+           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 
