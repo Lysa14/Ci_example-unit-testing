@@ -8,7 +8,7 @@ on:
 env:
   REGISTRY: ghcr.io
   ORGANIZATION: lysa14
-  IMAGE_NAME: test_image
+  IMAGE_NAME: test
   
 
 
