@@ -1,4 +1,4 @@
-name: test image
+name: Docker push image
 
 on:
   push:
@@ -50,7 +50,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          file: ./src/${{env.GIT_BRANCH }}/Dockerfile
+          file: Dockerfile
           push: true
           tags: |
             ${{ env.REGISTRY }}/${{ env.ORGANIZATION }}/${{ env.IMAGE_NAME }}:beta-${{ env.GIT_BRANCH }}
