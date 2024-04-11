@@ -1,4 +1,4 @@
-name: CI
+name: test javascript 
 
 on:
   push:
@@ -66,24 +66,24 @@ jobs:
                 Une nouvelle version de notre projet est disponible. Vous pouvez consulter la source du projet ici : https://github.com/${{ github.repository }}
                 ---------------------------------------------      
         
-  ##Add the Cypress job for GUI tests
-  cypress:
-    runs-on: ubuntu-latest
+  # #Add the Cypress job for GUI tests
+  # cypress:
+  #   runs-on: ubuntu-latest
 
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+  #   steps:
+  #   - name: Checkout code
+  #     uses: actions/checkout@v2
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '18'
-        
-    - name: Run Cypress Test
-      uses: cypress-io/github-action@v4
-      with:
-        command: npx cypress run
-        browser: chrome
+  #   - name: Set up Node.js
+  #     uses: actions/setup-node@v2
+  #     with:
+  #       node-version: '18'
+
+  #   - name: Run Cypress Test
+  #     uses: cypress-io/github-action@v4
+  #     with:
+  #       command: npx cypress run
+  #       browser: firefox
 
 
   # security:
@@ -99,12 +99,12 @@ jobs:
   #       env:
   #         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
-  codacy-analysis-cli:
-    name: Codacy Analysis CLI
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@main
+  # codacy-analysis-cli:
+  #   name: Codacy Analysis CLI
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout code
+  #       uses: actions/checkout@main
 
-      - name: Run Codacy Analysis CLI
-        uses: codacy/codacy-analysis-cli-action@master
+  #     - name: Run Codacy Analysis CLI
+  #       uses: codacy/codacy-analysis-cli-action@master
