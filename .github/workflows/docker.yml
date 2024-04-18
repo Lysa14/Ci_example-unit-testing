@@ -10,7 +10,7 @@ on:
 env:
   REGISTRY: ghcr.io
   USERNAME: lysa14
-  IMAGE_NAME: Ci_example-unit-testing
+  IMAGE_NAME: ci_example-unit-testing
   IMAGE_TAG: v0.1.0
 
 
