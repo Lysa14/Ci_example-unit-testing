@@ -1,9 +1,9 @@
-name: Package and publish
+name: Package Docker and publish
 
 on:
   push:
     branches:
-      - master
+      - test
  #   tags:
  #     - "v*.*.*"
 
