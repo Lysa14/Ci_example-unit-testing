@@ -53,7 +53,24 @@ jobs:
           file: Dockerfile
           push: true
           tags: |
-            ${{ env.REGISTRY }}/${{ env.ORGANIZATION }}/${{ env.IMAGE_NAME }}:beta-${{ env.GIT_BRANCH }}
-          labels: |
+            ${{ env.REGISTRY }}/${{ env.ORGANIZATION }}/${{ env.IMAGE_NAME }}
             ${{ steps.meta.outputs.labels }}
             ${{ github.ref }}
+
+  # Sign the image with cosign
+
+     
+      - name: Install Cosign
+        uses: sigstore/cosign-installer@v3.5.0
+        with:
+            cosign-release: 'v2.2.4'
+      - name: Check install!
+        run: cosign version
+
+      - name: Sign the published Docker image
+        env:
+          COSIGN_PASSWORD: ${{ secrets.COSIGN_PASSWORD }}
+          COSIGN_PRIVATE_KEY: ${{ secrets.COSIGN_PRIVATE_KEY }}
+        run: |
+          cosign sign --key env://COSIGN_PRIVATE_KEY --y ${{ env.REGISTRY }}/${{ env.ORGANIZATION }}/${{ env.IMAGE_NAME }}
+   
