@@ -44,7 +44,7 @@ jobs:
     - uses: testomatio/check-tests@stable
       with:
         framework: jest
-        tests: tests/**.spec.js
+        tests: test/**.spec.js
         token: ${{ secrets.GITHUB_TOKEN }}
 
 
