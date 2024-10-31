@@ -2,7 +2,8 @@ name: CVE Binary Tool Scanner
 
 on:
   push:
-  workflow_dispatch:
+    branches:
+      - test
 
 permissions:
   contents: read
