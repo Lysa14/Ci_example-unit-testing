@@ -118,12 +118,16 @@ jobs:
   #       env:
   #         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
-  # codacy-analysis-cli:
-  #   name: Codacy Analysis CLI
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Checkout code
-  #       uses: actions/checkout@main
+  codacy-analysis-cli:
+    name: Codacy Analysis CLI
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@main
 
-  #     - name: Run Codacy Analysis CLI
-  #       uses: codacy/codacy-analysis-cli-action@master
+      - name: Run Codacy Analysis CLI
+        uses: codacy/codacy-analysis-cli-action@master
+
+
+
+        
